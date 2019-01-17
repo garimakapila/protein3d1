@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--© Garima Kapila-->
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta author="Garima Kapila"><!-- (gk347@cornell.edu) -->
+	
+	<title>Protein3D</title>
+	
+	<link href="css/style.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+		<!--
+		3DMol.js Citation:
+		Nicholas Rego and David Koes
+		3Dmol.js: molecular visualization with WebGL
+		Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829
+		-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link href='https://fonts.googleapis.com/css?family=Muli:200,400,600,800|Open Sans|Roboto|Roboto Condensed|PT Serif' rel='stylesheet'>
+</head>
+
+<i class="fa fa-bars" id="menu-toggle"></i>
+<div id="menu">
+	<br>
+	<div id="menu-content">
+		<div class="menu-title">Structure</div>
+		<div class="menu-options structure">
+			<div class="menu-option">Ribbon</div>
+			<div class="menu-option">Sphere</div>
+			<div class="menu-option">Stick</div>
+			<div class="menu-option">Line</div>
+		</div>
+		<div class="menu-title">Style</div>
+		<div class="menu-options style">
+			<div class="menu-option">Default</div>
+			<div class="menu-option">Spectrum</div>
+			<div class="menu-option">Chain</div>
+		</div>
+	</div>
+	<div id="menu-footer">
+		<a href="index.html" id="home">Home</a>
+		<a href="index.html" id="about">About</div>
+		<a id="copyright" href="http://www.yulab.org/" target="blank">© 2019 Yu Lab</a>
+	</div>	
+</div>
+
+<div id="header">
+	<div id="title" class="content-shift"><a href="index.html">Protein3D</a></div>
+	<div id="sub-title" class="content-shift"></div>
+	<div id="search-bar" class="content-shift">
+		<i id="search-icon" class="fas fa-search"></i>
+		<input id="search-input" placeholder="Search">
+		<div id="search-option">
+			<div id="current-search-option">UniProt Name</div>
+			<i class="fa fa-chevron-down" id="search-caret"></i>
+			<div id="search-options">
+				<div class="search-option">UniProt Name</div>
+				<div class="search-option">UniProt Accession</div>
+				<div class="search-option">Gene Name</div>
+				<div class="search-option">Pfam Name</div>
+				<div class="search-option">Pfam ID</div>
+				<div class="search-option">Pfam Accession</div>
+			</div>
+		</div>
+		<button id="search-button" onclick="search_clicked()">SEARCH</button>
+	</div>
+</div>
+
+<div class="content-shift">
+<table id="search-results" align="center">
+	<col style="width:33%" span="3"/>
+	<tr><th></th><th id="loading"></th><th></th></tr>
+	<tr>
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr align="center">
+						<div id="container-01" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-02" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-03" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+	</tr>
+
+	<tr>
+		
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-04" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-05" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-06" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+	</tr>
+	
+	<tr>
+		
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-07" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-08" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+		<th>
+			<div class="search-result">
+				<table width=100%>
+					<tr>
+						<div id="container-09" class="mol-container"></div>
+					</tr>
+					<tr>
+						<div class="search-result-info"></div>
+					</tr>
+				</table>
+			</div>
+		</th>
+
+	</tr>
+
+</table>
+</div>
+
+<div id="page-numbers" class="content-shift">
+	<span id="left-page">&#9664</span>
+	<span id="pages"></span>
+	<span id="right-page">&#9654</span>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/index.js"></script>
