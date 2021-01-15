@@ -2,4 +2,4 @@
 
 Structural web viewer that renders & highlights human protein features.
 
-Sample pages here: [Protein3D](garimakapila.github.io/protein3d)
+Sample pages here: [Protein3D](garimakapila.github.io/Protein3D)
