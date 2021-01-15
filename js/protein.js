@@ -6,9 +6,6 @@ Nicholas Rego and David Koes
 Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829
 */
 
-alert('This is only a temporary website that showcases my frontend + design skills. Backend is disconnected and data is not accurate.')
-
-
 /*
 key pressed on spacebar, play pause
 search_input.on('keyup', function (e) {
@@ -311,7 +308,7 @@ function seq_cells_mouseleave(sender) {
 
 function highlight() {
 	highlight_string = highlight_box.val();
-	alert(highlight_string)
+	console.log(highlight_string)
 	highlight_string = highlight_string.split(',');
 	for (var h in highlight_string) {
 		highlight = highlight_string[h];
@@ -558,7 +555,7 @@ function init_model_setup(model) {
 			model_3D_hoverable();
 		},
 		error: function(hdr, status, err) {
-			alert( "Failed to load PDB " + pdbUri + ": " + err );
+			console.log( "Failed to load PDB " + pdbUri + ": " + err );
 		},
 	});
 }
@@ -581,7 +578,7 @@ function set_model(sender) {
 			model_3D_hoverable();
 		},
 		error: function(hdr, status, err) {
-			alert( "Failed to load PDB " + pdbUri + ": " + err );
+			console.log( "Failed to load PDB " + pdbUri + ": " + err );
 		},
 	});
 	set_protein_1D();

@@ -6,8 +6,6 @@ Nicholas Rego and David Koes
 Bioinformatics (2015) 31 (8): 1322-1324 doi:10.1093/bioinformatics/btu829
 */
 
-alert('This is only a temporary website that showcases my frontend + design skills. Backend is disconnected and data is not accurate.')
-
 $('#home').css('font-weight', '800');
 
 /*---------------------- Parse URL String ----------------------*/
@@ -292,7 +290,7 @@ function search_results_html() {
 					$("#loading").hide();
 				},
 				error: function(hdr, status, err) {
-					alert(error);
+					console.log(error);
 				},
 			});
 		}
@@ -350,7 +348,7 @@ function change_pdb_style() {
 				$("#loading").hide();
 			},
 			error: function(hdr, status, err) {
-				alert(error);
+				console.log(error);
 			},
 		});
 		}
